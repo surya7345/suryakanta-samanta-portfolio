@@ -23,3 +23,7 @@ function changeTitle() {
 
 // Change title every 3 seconds
 setInterval(changeTitle, 3000);
+
+
+
+

@@ -39,6 +39,7 @@ nav {
   height: 17vh;
 }
 
+
 .nav-links {
   gap: 2rem;
   list-style: none;
@@ -61,7 +62,9 @@ a:hover {
 .logo {
   font-size: 2rem;
 }
-
+.logo::first-letter{
+  color: rgb(21, 255, 0);
+}
 .logo:hover {
   cursor: default;
 }
@@ -211,6 +214,8 @@ section {
 .icon {
   cursor: pointer;
   height: 2rem;
+  
+  
 }
 
 /* BUTTONS */
@@ -296,17 +301,20 @@ section {
 .details-container {
   padding: 1.5rem;
   flex: 1;
-  background: white;
+  background: rgb(237, 240, 243);
   border-radius: 2rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(163, 163, 163);
+  border: rgb(255, 255, 255) 0.1rem solid;
+  border-color: rgb(255, 255, 255);
   text-align: center;
-  box-shadow: 0 4px 12px rgba(1, 12, 17, 0.5); 
+  
+  box-shadow: 10px 10px 20px #babecc,
+                -10px -10px 20px #ffffff;
   transition: 0.7s;
 }
 
 .details-container:hover{
-  box-shadow: 0 4px 8px rgb(21, 255, 0);
+  box-shadow: 10px 10px 20px #baccba,
+                -10px -10px 20px #ffffff;
   transform: scale(1.04);
 }
 
@@ -347,6 +355,7 @@ section {
   flex-direction: row;
   gap: 2.5rem;
   justify-content: space-around;
+  
 }
 
 article {
@@ -406,7 +415,9 @@ article .icon {
   margin: 2rem auto;
   padding: 0.5rem;
 }
-
+.contact-info-upper-container:hover {
+  border-color: #00ff00;
+}
 .contact-info-container {
   display: flex;
   align-items: center;
@@ -442,7 +453,132 @@ footer p {
   display: inline-block;
   transition: opacity 0.5s ease-in-out;
 }
-#title::first-letter{
-  color: rgb(21, 255, 0);
+
+
+
+/*   ---------------------         */
+.blur{
+  position: absolute;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background: rgb(255, 0, 234);
   
+  z-index: -9;
+  top: 43%;
+  left: 48%;
+  filter: blur(52px);
 }
+.blur1{
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: rgb(165, 0, 66);
+  
+  z-index: -9;
+  top: 39%;
+  left: 44%;
+  filter: blur(57px);
+}
+.blur2{
+  position: absolute;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background: rgb(0, 255, 0);
+  z-index: -9;
+  top: 50%;
+  left: 81%;
+  filter: blur(52px);
+}
+.blur3{
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: rgb(0, 47, 255);
+  z-index: -9;
+  top: 54%;
+  left: 84%;
+  filter: blur(68px);
+}
+.blur-about  , .blur-projects{
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: rgb(255, 0, 234);
+  z-index: -9;
+  top: 10%;
+  left: 36%;
+  filter: blur(42px);
+}
+.blur-about2 ,  .blur-projects2{
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: rgb(165, 0, 66);
+  z-index: -9;
+  top: 9%;
+  left: 40%;
+  filter: blur(25px);
+}
+
+.blur-skills{
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: rgb(0, 255, 0);
+  z-index: -9;
+  top: 10%;
+  left: 53%;
+  filter: blur(42px);
+}
+.blur-skills2{
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: rgb(25, 0, 255);
+  z-index: -9;
+  top: 9%;
+  left: 50%;
+  filter: blur(25px);
+}
+
+
+@keyframes typing {
+  from {
+      width: 0;
+  }
+  to {
+      width: 100%;
+  }
+}
+
+@keyframes blinkCaret {
+  from, to {
+      border-color: transparent;
+  }
+  50% {
+      border-color: transparent; 
+  }
+}
+
+/* Apply the animation to the text */
+#head-title {
+  
+  overflow: hidden; /* Ensures the text is hidden until it's written */
+  border-right: 1.3em solid transparent; /* Cursor effect */
+  white-space: nowrap; /* Prevents text from wrapping */
+  margin: 0 auto; /* Centering */
+  letter-spacing: .01em; /* Adjust letter spacing */
+  animation:
+      typing 3s steps(30, end) infinite alternate,
+      blinkCaret .75s step-end infinite;
+  width: 0; /* Start with no width */
+}
+
